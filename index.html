@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Nova services</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="hero">
+  <div class="overlay">
+    <div class="container">
+      <h1>Nova services</h1>
+      <p>أفضل خدمات التنظيف — جودة وسرعة</p>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+
+<section class="card">
+<h2>خدماتنا</h2>
+
+<div class="services">
+
+<div class="service">
+<img src="foto/takledy.jpeg" alt="">
+<h3>🧹 تنظيف تقليدي</h3>
+<p>تنظيف روتيني يومي للشقة يشمل الأرضيات والأسطح والمطبخ والحمام.</p>
+<button onclick="scrollToBooking()">احجز الآن</button>
+</div>
+
+<div class="service">
+<img src="foto/deep.jpeg" alt="">
+<h3>✨ تنظيف عميق</h3>
+<p>تنظيف الأماكن صعبة الوصول مثل الزوايا، خلف الأجهزة، والزجاج والمطابخ بالكامل.</p>
+<button onclick="scrollToBooking()">احجز الآن</button>
+</div>
+
+<div class="service">
+<img src="foto/badeltashteb.jpeg" alt="">
+<h3>🏗️ تنظيف بعد التشطيب</h3>
+<p>إزالة بقايا الجبس والدهانات ومخلفات التشطيب وتجهيز الشقة للسكن.</p>
+<button onclick="scrollToBooking()">احجز الآن</button>
+</div>
+
+<div class="service">
+<img src="foto/dray.jpeg" alt="">
+<h3>🛋️ تنظيف بالبخار</h3>
+<p>تنظيف الكنب والمفروشات باستخدام أجهزة البخار لإزالة البقع والجراثيم.</p>
+<button onclick="scrollToBooking()">احجز الآن</button>
+</div>
+<div class="service">
+<img src="foto/seana.jpeg" alt="">
+<h3>صيانة</h3>
+<p> قدّم خدمات صيانة متكاملة وسريعة بأعلى معايير الجودة لضمان كفاءة وأمان جميع المرافق والمعدات..</p>
+<button onclick="scrollToBooking()">احجز الآن</button>
+</div>
+<div class="service">
+<img src="foto/ta8lef.jpeg" alt="">
+<h3> نقل وتغليف </h3>
+<p>نوفر خدمات نقل وتغليف احترافية تحافظ على ممتلكاتك وتضمن وصولها بأمان وسلامة إلى وجهتك الجديدة.</p>
+<button onclick="scrollToBooking()">احجز الآن</button>
+</div>
+
+</div>
+</section>
+
+<!-- ✅ الفورم رجع -->
+<section class="card">
+<h2>نموذج الحجز</h2>
+
+<form id="bookingForm">
+
+<input id="name" placeholder="الاسم الكامل" required>
+<input id="clientPhone" placeholder="رقم واتساب" required>
+<input id="area" type="number" placeholder="مساحة الشقة (بالمتر)" required>
+<select id="propertyType" required>
+  <option value="">نوع المنشأة</option>
+  <option value="شقة">شقة</option>
+  <option value="فيلا">فيلا</option>
+  <option value="منزل خاص">منزل خاص</option>
+  <option value="مكتب">مكتب</option>
+  <option value="خدمة بعد التشطيب">خدمة بعد التشطيب</option>
+</select>
+
+<select id="service" required>
+<option value="">اختر الخدمة</option>
+<option>تنظيف تقليدي</option>
+<option>تنظيف عميق</option>
+<option>تنظيف بعد التشطيب</option>
+<option>تنظيف بالبخار</option>
+</select>
+
+<textarea id="address" placeholder="العنوان" required></textarea>
+
+<button type="submit">إرسال عبر واتساب</button>
+
+</form>
+<section class="card">
+  <h2>آراء العملاء</h2>
+
+  <div class="reviews-grid">
+
+    <div class="review-card">
+      <p>
+        بصراحة الخدمة كانت ممتازة جدًا، الفريق وصل في المعاد بالظبط واشتغلوا بشكل احترافي جدًا،
+        الشقة كانت محتاجة تنظيف عميق وفعلاً النتيجة فاقت توقعاتي.
+      </p>
+      <span>— أحمد محمد</span>
+    </div>
+
+    <div class="review-card">
+      <p>
+        تعامل محترم جدًا وسرعة في التنفيذ، نظفوا المكان بالكامل بعد التشطيب
+        بدون ما أحتاج أراجع عليهم، شغل عالي جدًا.
+      </p>
+      <span>— سارة علي</span>
+    </div>
+
+    <div class="review-card">
+      <p>
+        من أفضل الخدمات اللي جربتها، الالتزام بالمواعيد حاجة مميزة جدًا عندهم،
+        والتنظيف كان شامل لكل التفاصيل الصغيرة.
+      </p>
+      <span>— محمد خالد</span>
+    </div>
+
+    <div class="review-card">
+      <p>
+        بعد تجربة أكتر من شركة، دي أول مرة أكون راضي بالكامل،
+        شغل نظيف واهتمام بالتفاصيل الصغيرة في البيت.
+      </p>
+      <span>— ندى حسن</span>
+    </div>
+
+    <div class="review-card">
+      <p>
+        الخدمة ممتازة والأسعار مناسبة جدًا مقارنة بالجودة،
+        فريق محترم وبيشتغلوا بسرعة ومن غير أي إزعاج.
+      </p>
+      <span>— كريم يوسف</span>
+    </div>
+
+  </div>
+</section>
+<div style="text-align:center; margin-top:20px;">
+  <button onclick="openReviewForm()" class="add-review-btn">
+    + أضف رأيك
+  </button>
+</div>
+
+<div id="reviewForm" class="review-form hidden">
+  <h3>اكتب رأيك</h3>
+
+  <input id="reviewName" placeholder="اسمك">
+  <textarea id="reviewText" placeholder="رأيك في الخدمة"></textarea>
+
+  <button onclick="addReview()">إرسال</button>
+  <button onclick="closeReviewForm()" style="background:#999;">إغلاق</button>
+</div>
+</section>
+
+</main>
+
+<!-- ✅ زر واتساب ثابت -->
+<a href="https://wa.me/201515820191" class="whatsapp-float" target="_blank">
+💬
+</a>
+<div style="
+max-width:320px;
+margin:30px auto;
+padding:22px;
+border-radius:22px;
+background:linear-gradient(135deg,#0f172a,#1e293b,#334155);
+box-shadow:0 15px 35px rgba(0,0,0,0.25);
+text-align:center;
+font-family:Arial,sans-serif;
+color:white;
+border:1px solid rgba(255,255,255,0.08);
+">
+
+<div style="
+font-size:15px;
+letter-spacing:2px;
+color:#94a3b8;
+margin-bottom:8px;
+">
+LIVE COUNTER
+</div>
+
+<h2 style="
+margin:0;
+font-size:28px;
+font-weight:bold;
+color:#ffffff;
+">
+👁 زوار الموقع
+</h2>
+
+<p style="
+margin:10px 0 18px;
+font-size:14px;
+color:#cbd5e1;
+">
+نعتز بثقتكم وزيارتكم لنا
+</p>
+
+<div style="
+background:rgba(255,255,255,0.08);
+padding:14px;
+border-radius:16px;
+display:inline-block;
+min-width:220px;
+">
+
+<img src="https://visitor-badge.laobi.icu/badge?page_id=nova_service&left_text=&right_color=22c55e&left_color=111827">
+
+<div style="
+margin-top:15px;
+font-size:12px;
+color:#94a3b8;
+">
+Updated Automatically
+</div>
+
+</div>
+
+
+<script src="script.js"></script>
+</body>
+</html>
