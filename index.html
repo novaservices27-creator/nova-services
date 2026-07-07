@@ -233,7 +233,6 @@ Updated Automatically
 <script src="script.js"></script>
 </body>
 </html> -->
-
 <!doctype html>
 <html lang="ar" dir="rtl">
 <head>
@@ -243,29 +242,120 @@ Updated Automatically
   <link rel="stylesheet" href="style.css">
   
   <style>
-    /* تنسيق احترافي ومستجيب لفورم جوجل */
-    .google-form-container {
-      position: relative;
-      width: 100%;
-      height: 0;
-      padding-bottom: 140%; /* يضمن مساحة كافية لعرض أسئلة الفورم كاملة على الموبايل */
-      overflow: hidden;
+    /* تصميم كارت الحجز (الشيب الاحترافي الجديد) */
+    .booking-card-shape {
+      background: linear-gradient(135deg, #1e293b, #0f172a);
+      border: 2px solid #3b82f6;
+      border-radius: 20px;
+      padding: 40px 20px;
+      text-align: center;
+      margin: 30px auto;
+      box-shadow: 0 15px 30px rgba(59, 130, 246, 0.15);
+      color: #ffffff;
     }
-    
-    .google-form-container iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border: 0;
-      border-radius: 12px; /* زوايا دائرية تتماشى مع كروت الموقع */
+    .booking-card-shape h3 {
+      font-size: 24px;
+      margin-bottom: 12px;
+      color: #3b82f6;
+    }
+    .booking-card-shape p {
+      color: #cbd5e1;
+      font-size: 15px;
+      margin-bottom: 25px;
+    }
+    .btn-booking-action {
+      display: inline-block;
+      background: #3b82f6;
+      color: white;
+      padding: 15px 40px;
+      font-size: 18px;
+      font-weight: bold;
+      border-radius: 50px;
+      text-decoration: none;
+      box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
+      transition: all 0.3s ease;
+    }
+    .btn-booking-action:hover {
+      background: #2563eb;
+      transform: translateY(-3px);
+      box-shadow: 0 12px 25px rgba(39, 99, 235, 0.4);
     }
 
-    @media (min-width: 768px) {
-      .google-form-container {
-        padding-bottom: 90%; /* تقليل الارتفاع نسبياً على الشاشات الكبيرة والمكتبية */
-      }
+    /* زر الاتصال الهاتفي العائم (تم إلغاء الواتساب) */
+    .call-float-btn {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background: #3b82f6; /* لون أزرق مخصص للمكالمات */
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50px;
+      text-align: center;
+      font-size: 28px;
+      line-height: 60px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+      z-index: 1000;
+      cursor: pointer;
+      border: none;
+      transition: transform 0.2s;
+    }
+    .call-float-btn:hover {
+      transform: scale(1.05);
+    }
+
+    /* النافذة المنبثقة لاختيار رقم الاتصال */
+    .call-menu-popup {
+      position: fixed;
+      bottom: 90px;
+      left: 20px;
+      background: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+      padding: 15px;
+      width: 260px;
+      z-index: 1000;
+      border: 1px solid #e2e8f0;
+      display: none; /* مخفية افتراضياً */
+    }
+    .call-menu-popup.open {
+      display: block;
+      animation: popUpAnim 0.3s ease;
+    }
+    .call-menu-popup h4 {
+      margin: 0 0 12px 0;
+      font-size: 14px;
+      color: #1e293b;
+      border-bottom: 1px solid #f1f5f9;
+      padding-bottom: 8px;
+    }
+    .call-number-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      text-decoration: none;
+      color: #1e293b;
+      padding: 12px;
+      margin-bottom: 8px;
+      background: #f8fafc;
+      border-radius: 10px;
+      font-weight: bold;
+      font-size: 15px;
+      border: 1px solid #e2e8f0;
+      transition: all 0.2s;
+    }
+    .call-number-link:last-child {
+      margin-bottom: 0;
+    }
+    .call-number-link:hover {
+      background: #eff6ff;
+      border-color: #bfdbfe;
+      color: #2563eb;
+    }
+
+    @keyframes popUpAnim {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
@@ -330,14 +420,13 @@ Updated Automatically
   </div>
 </section>
 
-<!-- قسم نموذج الحجز الجديد باستخدام Google Form -->
-<section class="card" id="bookingSection">
-  <h2>نموذج الحجز</h2>
-  <div class="google-form-container">
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfHAzsb8NuC6LUHqpKEvEyXtXwtQVGwWKVJ2MNORejEC97_0g/viewform?usp=header" loading="lazy">
-      جاري التحميل...
-    </iframe>
-  </div>
+<!-- قسم الحجز الجديد: شيب (Shape) كارت احترافي يفتح في صفحة جديدة بالكامل -->
+<section class="booking-card-shape" id="bookingSection">
+  <h3>تأكيد حجز خدمة</h3>
+  <p>اضغط على الزر بالأسفل لفتح نموذج الحجز السريع وتحديد الميعاد المناسب لك </p>
+  <a href="https://forms.gle/vmG1QuGqKpnDxT5T8" target="_blank" class="btn-booking-action">
+    🔗 اضغط هنا للحجز معنا
+  </a>
 </section>
 
 <section class="card">
@@ -384,8 +473,23 @@ Updated Automatically
 
 </main>
 
-<!-- زر واتساب الثابت -->
-<a href="https://wa.me/201515820191" class="whatsapp-float" target="_blank">💬</a>
+<!-- النافذة المنبثقة لأرقام الاتصال الهاتفي المباشر -->
+<div id="callMenuPopup" class="call-menu-popup">
+  <h4>اختار الرقم لإجراء المكالمة:</h4>
+  <!-- الرقم الأول الفعلي -->
+  <a href="tel:01515820191" class="call-number-link">
+    <span>الخط الأساسي</span>
+    <span>📞 01515820191</span>
+  </a>
+  <!-- الرقم الثاني (عدليه من هنا مباشرة للرقم التاني الفعلي) -->
+  <a href="tel:01515820181" class="call-number-link">
+    <span>الخط الإضافي</span>
+    <span>📞 01515820181</span>
+  </a>
+</div>
+
+<!-- زر الاتصال الهاتفي العائم (أيقونة سماعة الهاتف) -->
+<button class="call-float-btn" onclick="toggleCallMenu()">📞</button>
 
 <!-- عداد الزوار -->
 <div style="max-width:320px; margin:30px auto; padding:22px; border-radius:22px; background:linear-gradient(135deg,#0f172a,#1e293b,#334155); box-shadow:0 15px 35px rgba(0,0,0,0.25); text-align:center; font-family:Arial,sans-serif; color:white; border:1px solid rgba(255,255,255,0.08);">
@@ -401,11 +505,26 @@ Updated Automatically
 <script src="script.js"></script>
 
 <script>
-  // الفانكشن الخاصة بالتمرير السلس إلى قسم الحجز الجديد عند الضغط على "احجز الآن"
+  // سكرول سلس لشيب الحجز
   function scrollToBooking() {
     const bookingSection = document.getElementById('bookingSection');
     if(bookingSection) {
       bookingSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
+  // فتح وإغلاق قائمة الاتصال
+  function toggleCallMenu() {
+    const popup = document.getElementById('callMenuPopup');
+    popup.classList.toggle('open');
+  }
+
+  // إغلاق القائمة لو ضغط في أي مكان خارجي
+  window.onclick = function(event) {
+    const popup = document.getElementById('callMenuPopup');
+    const btn = document.querySelector('.call-float-btn');
+    if (event.target !== popup && event.target !== btn && !popup.contains(event.target)) {
+      popup.classList.remove('open');
     }
   }
 </script>
