@@ -4,27 +4,44 @@ function scrollToBooking() {
   });
 }
 
+// قائمة الأرقام المتاحة لتوزيع الرسائل العشوائية
+const whatsappNumbers = [
+  "201515820181",
+  "201515820191"
+];
+
+// دالة لاختيار رقم عشوائي
+function getRandomNumber(numbersArray) {
+  const randomIndex = Math.floor(Math.random() * numbersArray.length);
+  return numbersArray[randomIndex];
+}
+
 document.getElementById('bookingForm').addEventListener('submit', function(e){
   e.preventDefault();
 
   const name = document.getElementById('name').value;
   const phone = document.getElementById('clientPhone').value;
   const area = document.getElementById('area').value;
-  const propertyType = document.getElementById('propertyType').value; // 👈 الجديد
+  const propertyType = document.getElementById('propertyType').value;
   const service = document.getElementById('service').value;
   const address = document.getElementById('address').value;
 
   let message = `حجز جديد:\n`;
   message += `الاسم: ${name}\n`;
   message += `الهاتف: ${phone}\n`;
-  message += `نوع المنشأة: ${propertyType}\n`; // 👈 الجديد
+  message += `نوع المنشأة: ${propertyType}\n`;
   message += `مساحة الشقة: ${area} متر\n`;
   message += `الخدمة: ${service}\n`;
   message += `العنوان: ${address}`;
 
-  const url = `https://wa.me/201515820191?text=${encodeURIComponent(message)}`;
+  // اختيار رقم عشوائي مع كل ضغطة إرسال جديدة
+  const selectedNumber = getRandomNumber(whatsappNumbers);
+  console.log(`سيتم إرسال حجز العميل إلى الرقم: ${selectedNumber}`);
+
+  const url = `https://wa.me/${selectedNumber}?text=${encodeURIComponent(message)}`;
   window.open(url, "_blank");
 });
+
 function openReviewForm(){
   document.getElementById("reviewForm").classList.remove("hidden");
 }
@@ -36,7 +53,6 @@ function closeReviewForm(){
 // تحميل الكومنتات عند فتح الصفحة
 window.addEventListener("load", function () {
   const saved = JSON.parse(localStorage.getItem("reviews")) || [];
-
   saved.forEach(addReviewToDOM);
 });
 
